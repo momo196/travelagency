@@ -12,8 +12,6 @@ public class VoyageContoller {
     @PostMapping("/voyage")
     public ResponseEntity<?> createVoyage(@RequestBody Voyage voyage) {
         return voyageServices.createVoyage(voyage);
-
-
     }
 
     @GetMapping("/voyages")
