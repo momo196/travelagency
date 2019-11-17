@@ -1,4 +1,5 @@
-package com.ditraacademy.travelagenct.cor;
+package com.ditraacademy.travelagenct.cor.destination;
+
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,10 +14,10 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Destination {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private  Integer age;
+    private String nom;
+    private String description;
 }
