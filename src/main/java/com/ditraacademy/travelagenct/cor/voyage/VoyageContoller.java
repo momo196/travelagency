@@ -1,8 +1,11 @@
 package com.ditraacademy.travelagenct.cor.voyage;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class VoyageContoller {
@@ -18,6 +21,10 @@ public class VoyageContoller {
     public ResponseEntity<?> getVoyages() {
         return voyageServices.getVoyages();
 
+    }
+    @GetMapping("/voyages/byPrice")
+    public ResponseEntity getVoyageByPrice(@RequestParam double min,@RequestParam double max,@RequestParam int nbPlaces) {
+        return voyageServices.getVoyageByPrice( min, max,nbPlaces);
     }
 
     @GetMapping("/voyage/{id}")

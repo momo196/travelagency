@@ -44,6 +44,10 @@ public class VoyageServices {
         return new ResponseEntity<>(voyage, HttpStatus.OK);
 
     }
+    public ResponseEntity<?> getVoyageByPrice(double min,double max,int nbPlaces) {
+        List<Voyage> voyages = voyageRepository.findAllByPrixIsBetweenAndNbPlacesIsNot(min,max,nbPlaces);
+        return new ResponseEntity(voyages,HttpStatus.OK);
+    }
 
     public ResponseEntity<?> updateVoyage( Voyage voyage, int id) {
         Optional<Voyage> voyageOptional = voyageRepository.findById(id);
